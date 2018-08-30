@@ -1,0 +1,68 @@
+————————— Watch not work —————————————
+BACKGROUND
+2018-08-30 16:03:58.032175+0900 WCM_BackGround[5791:5575929] info: session(_:activationDidCompleteWith:error:): session activationDidComplete with state: 2
+2018-08-30 16:03:58.032393+0900 WCM_BackGround[5791:5575929] [WC] WCSession counterpart app not installed
+2018-08-30 16:04:00.099997+0900 WCM_BackGround[5791:5575873] Status bar could not find cached time string image. Rendering in-process.
+2018-08-30 16:05:28.132015+0900 WCM_BackGround[5791:5577154] info: sessionWatchStateDidChange: session Watch state did change: <WCSession: 0x1c0123840, hasDelegate: YES, activationState: 2>  IsPaired: true AppInstalled: true
+aplContxButton: Send aplContext: 1
+userInfoButton: Send userInfo: 2
+fileTansferButton: Send fileTansfer: 3
+Send UserInfo complete
+Send FileTransfer complete
+
+————————— Watch work foreground —————————————
+———— change to work (Received a previous transmission)
+2018-08-30 16:09:16.420288+0900 WCM_BackGround[5791:5577156] info: sessionReachabilityDidChange: session Reachability did change: <WCSession: 0x1c0123840, hasDelegate: YES, activationState: 2> true
+Reachable
+Remote >> AplContextCMD$$ send[1, 04:06:26.894] recv[1, 04:09:16.707]
+Remote >> UserInfoCMD$$ send[2, 04:06:28.623] recv[2, 04:09:17.300]
+Remote >> FileTansCND$$ send[3, 04:06:29.621] recv[3, 04:09:17.589]
+Remote >> AplContextCMD$$ send[1, 04:06:26.894] recv[4, 04:09:17.643]  	 <<<<<<<<<<<  Incorrect !!!
+2018-08-30 16:09:20.870877+0900 WCM_BackGround[5791:5577156] [WC] -[WCFileStorage enumerateIncomingUserInfosWithBlock:] could not load user info data at path /var/mobile/Containers/Data/Application/7404E2AB-69C3-434A-B622-B1E8FCD18107/Documents/Inbox/com.apple.watchconnectivity/869E8E3E-E1AB-46D0-9B72-8FFB1CF5A4BA/UserInfo/B64E20B3-C594-443D-8812-04E7600FA8FE/userinfo-transfer-object-data due to NSFileReadNoSuchFileError -> ENOENT
+2018-08-30 16:09:20.872588+0900 WCM_BackGround[5791:5577156] [WC] -[WCFileStorage enumerateIncomingUserInfosWithBlock:] could not load user info data at path /var/mobile/Containers/Data/Application/7404E2AB-69C3-434A-B622-B1E8FCD18107/Documents/Inbox/com.apple.watchconnectivity/869E8E3E-E1AB-46D0-9B72-8FFB1CF5A4BA/UserInfo/6EAE34C5-852B-4FE3-B70E-4C63DE6973A3/userinfo-transfer-object-data due to NSFileReadNoSuchFileError -> ENOENT
+2018-08-30 16:09:20.876941+0900 WCM_BackGround[5791:5577156] [WC] -[WCFileStorage enumerateIncomingUserInfosWithBlock:] could not load user info data at path /var/mobile/Containers/Data/Application/7404E2AB-69C3-434A-B622-B1E8FCD18107/Documents/Inbox/com.apple.watchconnectivity/869E8E3E-E1AB-46D0-9B72-8FFB1CF5A4BA/UserInfo/B64E20B3-C594-443D-8812-04E7600FA8FE/userinfo-transfer-object-data due to NSFileReadNoSuchFileError -> ENOENT
+2018-08-30 16:09:20.878684+0900 WCM_BackGround[5791:5577156] [WC] -[WCFileStorage enumerateIncomingUserInfosWithBlock:] could not load user info data at path /var/mobile/Containers/Data/Application/7404E2AB-69C3-434A-B622-B1E8FCD18107/Documents/Inbox/com.apple.watchconnectivity/869E8E3E-E1AB-46D0-9B72-8FFB1CF5A4BA/UserInfo/6EAE34C5-852B-4FE3-B70E-4C63DE6973A3/userinfo-transfer-object-data due to NSFileReadNoSuchFileError -> ENOENT
+2018-08-30 16:09:30.075615+0900 WCM_BackGround[5791:5578736] info: sessionReachabilityDidChange: session Reachability did change: <WCSession: 0x1c0123840, hasDelegate: YES, activationState: 2> false
+Not Reachable
+
+———— New transmission / reception (watch screen display)
+aplContxButton: Send aplContext: 4
+userInfoButton: Send userInfo: 5
+Remote >> AplContextCMD$$ send[4, 04:11:41.569] recv[5, 04:11:41.806] 	 <<<<<<<<<<<  Correct !!!
+Send UserInfo complete
+fileTansferButton: Send fileTansfer: 6
+Remote >> UserInfoCMD$$ send[5, 04:11:42.573] recv[6, 04:11:43.375]
+2018-08-30 16:11:46.098671+0900 WCM_BackGround[5791:5579112] info: sessionReachabilityDidChange: session Reachability did change: <WCSession: 0x1c0123840, hasDelegate: YES, activationState: 2> false
+Not Reachable
+2018-08-30 16:11:46.238084+0900 WCM_BackGround[5791:5579750] info: sessionReachabilityDidChange: session Reachability did change: <WCSession: 0x1c0123840, hasDelegate: YES, activationState: 2> true
+Reachable
+Send FileTransfer complete
+Remote >> FileTansCND$$ send[6, 04:11:43.620] recv[7, 04:11:48.577]
+2018-08-30 16:11:56.205371+0900 WCM_BackGround[5791:5579750] info: sessionReachabilityDidChange: session Reachability did change: <WCSession: 0x1c0123840, hasDelegate: YES, activationState: 2> false
+Not Reachable
+2018-08-30 16:11:57.558435+0900 WCM_BackGround[5791:5579750] info: sessionReachabilityDidChange: session Reachability did change: <WCSession: 0x1c0123840, hasDelegate: YES, activationState: 2> true
+Reachable
+2018-08-30 16:12:00.004717+0900 WCM_BackGround[5791:5575873] Status bar could not find cached time string image. Rendering in-process.
+2018-08-30 16:12:00.312041+0900 WCM_BackGround[5791:5579112] info: sessionReachabilityDidChange: session Reachability did change: <WCSession: 0x1c0123840, hasDelegate: YES, activationState: 2> false
+Not Reachable
+
+—————————— Watch background —————————————
+aplContxButton: Send aplContext: 7
+userInfoButton: Send userInfo: 8
+fileTansferButton: Send fileTansfer: 9
+Send UserInfo complete
+Send FileTransfer complete
+2018-08-30 16:29:00.006550+0900 WCM_BackGround[5791:5575873] Status bar could not find cached time string image. Rendering in-process.
+2018-08-30 16:30:00.004380+0900 WCM_BackGround[5791:5575873] Status bar could not find cached time string image. Rendering in-process.
+2018-08-30 16:33:00.003081+0900 WCM_BackGround[5791:5575873] Status bar could not find cached time string image. Rendering in-process.
+2018-08-30 16:38:57.419971+0900 WCM_BackGround[5791:5583751] info: sessionReachabilityDidChange: session Reachability did change: <WCSession: 0x1c0123840, hasDelegate: YES, activationState: 2> true
+Reachable
+Remote >> AplContextCMD$$ send[7, 04:27:04.093] recv[8, 04:38:57.393]
+Remote >> UserInfoCMD$$ send[8, 04:27:05.381] recv[9, 04:38:57.456]
+2018-08-30 16:39:00.004091+0900 WCM_BackGround[5791:5575873] Status bar could not find cached time string image. Rendering in-process.
+Remote >> FileTansCND$$ send[9, 04:27:07.014] recv[10, 04:38:57.584]
+Remote >> AplContextCMD$$ send[7, 04:27:04.093] recv[11, 04:38:57.631]	 <<<<<<<<<<<  Incorrect !!!
+2018-08-30 16:39:01.212844+0900 WCM_BackGround[5791:5583751] [WC] -[WCFileStorage enumerateIncomingUserInfosWithBlock:] could not load user info data at path /var/mobile/Containers/Data/Application/7404E2AB-69C3-434A-B622-B1E8FCD18107/Documents/Inbox/com.apple.watchconnectivity/869E8E3E-E1AB-46D0-9B72-8FFB1CF5A4BA/UserInfo/174642E8-517C-48D5-939A-2BA3FD8C4C2B/userinfo-transfer-object-data due to NSFileReadNoSuchFileError -> ENOENT
+2018-08-30 16:39:01.215326+0900 WCM_BackGround[5791:5583751] [WC] -[WCFileStorage enumerateIncomingUserInfosWithBlock:] could not load user info data at path /var/mobile/Containers/Data/Application/7404E2AB-69C3-434A-B622-B1E8FCD18107/Documents/Inbox/com.apple.watchconnectivity/869E8E3E-E1AB-46D0-9B72-8FFB1CF5A4BA/UserInfo/A123E306-E7BE-4078-B971-1329D7D2F5A2/userinfo-transfer-object-data due to NSFileReadNoSuchFileError -> ENOENT
+2018-08-30 16:39:02.354020+0900 WCM_BackGround[5791:5583751] info: sessionReachabilityDidChange: session Reachability did change: <WCSession: 0x1c0123840, hasDelegate: YES, activationState: 2> false
+Not Reachable
