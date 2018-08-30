@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zgq-H5-TfR">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="7Z8-iQ-mON">
+            <objects>
+                <controller id="Zgq-H5-TfR" customClass="InterfaceController" customModule="WCM_BackGround_watchkitapp" customModuleProvider="target">
+                    <items>
+                        <label width="1" height="0.80000000000000004" alignment="left" text="Message" textAlignment="center" numberOfLines="4" id="yXu-np-ent"/>
+                        <button width="1" height="0.20000000000000001" alignment="center" title="Button" id="kBd-kZ-7Ef">
+                            <connections>
+                                <action selector="buttonAct" destination="Zgq-H5-TfR" id="qOW-0a-Yl8"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="messageLabel" destination="yXu-np-ent" id="4vw-rx-tFM"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
